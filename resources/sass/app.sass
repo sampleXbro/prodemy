@@ -1,0 +1,208 @@
+// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito')
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap')
+
+// Variables
+@import 'variables'
+@import 'react_styles'
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap'
+
+//Slick slider
+@import '~slick-carousel/slick/slick-theme'
+@import '~slick-carousel/slick/slick'
+
+/* custom scrollbar */
+::-webkit-scrollbar
+    width: 7px
+
+::-webkit-scrollbar-track
+    background: #f1f1f1
+
+::-webkit-scrollbar-thumb
+    background: $main-grey
+    border-radius: 20px
+    transition-duration: 200ms
+
+
+::-webkit-scrollbar-thumb:hover
+    background: $main-orange
+    transition-duration: 200ms
+
+html
+    scroll-behavior: smooth
+
+body
+    background-color: $main-white
+
+hr
+    border: 0
+    clear: both
+    display: block
+    width: 100%
+    opacity: .3
+    background-color: #6c757d
+    height: 1px
+    padding: 0
+    margin: 0
+
+.navbar
+    background-color: $main-grey
+
+#main-logo
+    color: $main-orange
+    text-decoration: none
+    font-family: $font-audiowide
+    font-size: 36px
+
+.nav-link
+    font-family: $font-roboto-condensed
+    font-weight: 300
+    color: $main-orange
+    transition-duration: 200ms
+
+.nav-link:hover
+    transition-duration: 200ms
+    color: $main-white
+
+.wallpaper
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 57px
+    background-position: center
+    background-size: cover
+    height: 1000px
+
+.wallpaper-card
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    margin-top: -80px
+    max-width: 1000px
+    min-height: 480px
+    background-color: $main-grey
+    border-radius: 5px
+
+.wallpaper-title
+    text-align: center
+    font-family: $font-roboto-condensed
+    font-weight: 700
+    font-size: 72px
+    color: $main-light-grey
+
+.wallpaper-description
+    @extend .wallpaper-title
+    margin: 20px
+    font-size: 18px
+    font-weight: 300
+
+.big-button
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $main-orange
+    border-radius: 5px
+    text-decoration: none
+    width: 160px
+    height: 40px
+    margin: 20px
+    font-family: $font-roboto-condensed
+    font-size: 18px
+    font-weight: 300
+    color: $main-white
+    transition-duration: 200ms
+
+.big-button:hover
+    text-decoration: none
+    color: $main-light-grey
+    background-color: $green
+    width: 200px
+    border-radius: 50px
+    transition-duration: 200ms
+
+.features-container
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+
+
+.small-feature-card
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    width: 400px
+    height: 250px
+    margin: 25px
+    padding: 15px
+    background-size: cover
+    transition-duration: 200ms
+
+.small-feature-card:hover
+    transform: scale(1.1)
+    transition-duration: 200ms
+
+.text-middle-normal-light
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    background-color: rgba(0, 0, 0, .55)
+    color: $main-light-grey
+    font-family: $font-roboto-condensed
+    font-weight: 300
+    font-size: 18px
+    padding: 15px
+    user-select: none
+
+.text-middle-normal-dark
+    @extend .text-middle-normal-light
+    font-size: 24px
+    color: $main-grey
+    background-color: rgba(255, 255, 255, .55)
+    padding: 10px
+    width: 100%
+
+.courses-container
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+
+.small-course-card
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    width: 300px
+    height: 200px
+    margin: 25px
+    background-position: center
+    background-size: cover
+    position: relative
+
+.rating
+    position: absolute
+    right: 10px
+    bottom: 10px
+    background-color: rgba(255, 255, 255, .65)
+    border-radius: 20px
+    padding: 0 10px
+    transition-duration: 200ms
+
+.small-course-card:hover
+    .rating
+        transform: scale(1.3)
+        right: 80px
+        bottom: 20px
+        transition-duration: 200ms
+
+.menu-icon
+    color: $main-orange
+
