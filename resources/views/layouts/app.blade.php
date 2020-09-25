@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'PRODEMY') }}</title>
 
     <!-- Scripts -->
-    <script src='/public/js/app.js' defer></script>
+    <script src='public/js/app.js' defer></script>
     <script src="https://kit.fontawesome.com/991dceb5d5.js" crossorigin="anonymous"></script>
 
 
@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href='/public/css/app.css' rel="stylesheet">
+    <link href='public/css/app.css' rel="stylesheet">
 
 
 </head>
