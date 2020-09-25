@@ -9,7 +9,6 @@ if (App::environment('production')) {
     URL::forceScheme('https');
 }
 
-
 Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
