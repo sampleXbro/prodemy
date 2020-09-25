@@ -61,7 +61,7 @@
 
     <div class="p-0  main-page">
 
-        <div class="wallpaper" style="background-image: url({{asset('images/wallpaper/studio.jpg')}})">
+        <div class="wallpaper" style="background-image: url('public/images/wallpaper/studio.jpg')">
             <div class="wallpaper-card">
                 <span class="wallpaper-title">ЧТО ТАКОЕ PRODEMY?</span>
                 <span class="wallpaper-description">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.</span>
@@ -73,7 +73,7 @@
 
         <div class="container-fluid features-container">
 
-            <div class="small-feature-card" style="background-image: url({{asset('images/digital-mixer-recording-studio-with-computer-recording-music_169016-3817.jpg')}})">
+            <div class="small-feature-card" style="background-image: url('public/images/digital-mixer-recording-studio-with-computer-recording-music_169016-3817.jpg')">
                 <p class="text-middle-normal-light" >БОЛЕЕ {{floor($courses->sum('full_duration') / 3600)}} ЧАСОВ ОБУЧАЮЩИХ МАТЕРИАЛОВ</p>
             </div>
 
