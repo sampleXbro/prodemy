@@ -1,4 +1,21 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap);@import url(https://fonts.googleapis.com/css2?family=Audiowide&display=swap);@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap);@charset "UTF-8";
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @-webkit-keyframes popUp {
   0% {
     transform: scale(0, 0);
@@ -10,6 +27,7 @@
     transform: scale(1, 1);
   }
 }
+
 @keyframes popUp {
   0% {
     transform: scale(0, 0);
@@ -399,8 +417,8 @@
 }
 
 .send-message-button:active {
-  transition-duration: 200ms;
-  transform: scale(1.2) rotate(360deg);
+  -webkit-animation: rotation 500ms ease-in forwards;
+          animation: rotation 500ms ease-in forwards;
 }
 
 .chat-messages-area {
