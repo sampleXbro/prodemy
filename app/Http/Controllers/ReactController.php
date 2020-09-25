@@ -181,7 +181,7 @@ class ReactController extends Controller
             $image = $request->get('file');
             $name = Str::slug($userToUpdate->name) . time().'.' . explode('/', explode(':', substr($image, 0, strpos($image, ';')))[1])[1];
             Image::make($image)->save('images/usersImages/' . $name);
-            $userToUpdate->avatar = public_path('images/usersImages/') . $name;
+            $userToUpdate->avatar = '/public/images/usersImages/' . $name;
         }
 
         $userToUpdate->save();
