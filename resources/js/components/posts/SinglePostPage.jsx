@@ -115,7 +115,7 @@ export function SinglePostPage({user}){
             {isLoading && <Preloader/>}
             <Title text={currentPost.title.toUpperCase()} size='20px' textAlign='center'/>
             <div className='d-flex justify-content-center'>
-                <Image path={currentPost.image} size='500px' margin='10px'/>
+                <Image path={currentPost.image} size='100%' margin='10px'/>
             </div>
             {ReactPlayer.canPlay(currentPost.video_link) &&
             <div className={'d-flex justify-content-center border border-primary'}>

@@ -273,7 +273,7 @@
   flex-direction: column;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.85);
-  margin: 15px;
+  margin: 15px 5px;
   background-color: antiquewhite;
 }
 

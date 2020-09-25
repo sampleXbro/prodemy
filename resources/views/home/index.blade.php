@@ -5,7 +5,7 @@
 
     <nav class=" navbar navbar-expand-lg fixed-top py-0 shadow-sm">
     <div class="container">
-        <a id="main-logo" class="text" href="{{ url('/') }}">
+        <a id="main-logo" class="text" href="{{ url('/') }}" style="margin-top: -10px">
             {{ config('app.name', 'PRODEMY') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Переключение навигации') }}">

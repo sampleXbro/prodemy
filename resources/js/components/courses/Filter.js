@@ -30,7 +30,7 @@ export function Filter({setSoftwareId}){
     const resetFilters = filterText ? <button style={{marginTop: '15px'}} className={'filter-button'} onClick={handleResetClick}>{filterText}</button> : '';
 
     return(
-        <div className={'text-center dark-container mt-2'}>
+        <div className={'text-center dark-container mt-2 courses-filter-buttons'}>
             <div className='d-flex justify-content-around align-items-center'>
             {buttons}
             </div>

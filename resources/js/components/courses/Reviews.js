@@ -18,7 +18,7 @@ export function Reviews({reviews}){
                     <StarRatings
                     rating = {review.rev_rating}
                     starRatedColor = "#F38300"
-                    starDimension = '20px'
+                    starDimension = '18px'
                     starSpacing = '1px'
                     numberOfStars = {5}
                     name = 'rating'
