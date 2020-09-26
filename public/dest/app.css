@@ -417,8 +417,8 @@
 }
 
 .send-message-button:active {
-  -webkit-animation: rotation 500ms ease-in forwards;
-          animation: rotation 500ms ease-in forwards;
+  transition-duration: 200ms;
+  transform: scale(1.2) rotate(360deg);
 }
 
 .chat-messages-area {

@@ -62,7 +62,7 @@ export function PrivateMessages({users, selectedUserId, currentUser, messages}) 
 
     return (
         <div className='message-window'>
-            <div className='d-flex w-100'>
+            <div className='d-flex w-100 show-message-window'>
                 <Image path={user.avatar} size='150px' margin='5px'/>
                 <div className='d-flex flex-column w-100'>
                     <div className='d-flex w-100 justify-content-between'>
@@ -82,8 +82,8 @@ export function PrivateMessages({users, selectedUserId, currentUser, messages}) 
                 </div>
             </div>
             <hr/>
-            <div className='d-flex flex-grow-1'>
-                <div className='d-flex flex-column w-50'>
+            <div className='d-flex show-message-window'>
+                <div className='d-flex flex-column w-100'>
                     <Title size='16px' margin='0 0 0 10px' text={'Переписка'} weight={400}/>
                     <div className='messages-list-container'>
                         {messagesJsx.length >= 1 ?
@@ -93,7 +93,7 @@ export function PrivateMessages({users, selectedUserId, currentUser, messages}) 
                                    margin='10px' weight={300}/>}
                     </div>
                 </div>
-                <div className='d-flex flex-column w-50'>
+                <div className='d-flex flex-column w-100'>
                     <Title size='16px' margin='0 0 0 10px' text={'Написать сообщение'} weight={400}/>
                     <textarea
                         value={message}

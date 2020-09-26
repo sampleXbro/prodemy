@@ -92,8 +92,6 @@ export const Chat = ({user, privateMessages}) => {
         borderRadius: isOpen ? '10px' : '100%',
         transitionDuration: '200ms',
         position: 'fixed',
-        bottom: '1%',
-        right: '1%',
         zIndex: 5,
         userSelect: 'none',
         transitionTimingFunction: 'ease-in',
@@ -161,7 +159,7 @@ export const Chat = ({user, privateMessages}) => {
     return (
         <>
             {popup}
-            <div style={dynStyles}>
+            <div style={dynStyles} className='chat-outer-container'>
                 {chatContent()}
             </div>
         </>

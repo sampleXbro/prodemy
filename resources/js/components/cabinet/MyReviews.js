@@ -64,7 +64,6 @@ export const MyReviews = React.memo(({id, reviews}) => {
         return (
             <tr key={review.id} className={color} onClick={() => handleCeilClick(review.id)}>
                 <th scope="row">{i+1}</th>
-                <td><Image path={review.course.image} size={'50px'} title={review.course.title}/></td>
                 <td><Link to={`/portal/course/${review.course.id}`}>{review.course.title}</Link></td>
                 <td>{review.rev_rating} з 5</td>
                 <td>{moment(review.created_at).format('DD.MM.YYYY')}</td>
@@ -81,10 +80,9 @@ export const MyReviews = React.memo(({id, reviews}) => {
                     <thead>
                     <tr>
                         <th scope="col">№</th>
-                        <th scope="col">Изображение курса</th>
-                        <th scope="col">Название курса</th>
-                        <th scope="col">Оценка отзыва</th>
-                        <th scope="col">Дата отзыва</th>
+                        <th scope="col">Курс</th>
+                        <th scope="col">Оценкаа</th>
+                        <th scope="col">Дата</th>
                     </tr>
                     </thead>
                     <tbody>

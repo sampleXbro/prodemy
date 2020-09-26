@@ -16,24 +16,21 @@ export function NavPanel({currentUser, unreadQty}){
     return(
         <nav className=" navbar navbar-expand-lg fixed-top py-0 shadow-sm">
             <div className="container position-relative">
-                <div className='position-absolute' style={{right: '-10px', top: '3px'}}>
+                <div className='position-absolute small-nav-panel-avatar-container'>
                     <Link to='/portal/cabinet/studied-courses'>
-                        <Image path={currentUser.avatar} size='22px' margin={0} borderRadius='5px' title='smallUserAvatar'/>
+                        <Image path={currentUser.avatar} size='25px' margin={0} borderRadius='5px' title='smallUserAvatar'/>
                     </Link>
                 </div>
-                <div className='position-absolute' style={{right: '-10px', top: '30px'}}>
-                    {unreadQty ?
-                        <Link to='/portal/cabinet/my-messages'>
-                            <Badge color='#38c172'
-                                   text={unreadQty > 10 ? '10+' : unreadQty}
-                                   size='22px'
-                                   textSize='12px'
-                                   textColor='white'
-                                   radius='0 100% 100% 100%'
-                            />
-                        </Link>
-                        : ''
-                    }
+                <div className='position-absolute small-nav-panel-badge'>
+                    <Link to='/portal/cabinet/my-messages'>
+                        <Badge color='#38c172'
+                               text={unreadQty > 10 ? '10+' : unreadQty}
+                               size='22px'
+                               textSize='12px'
+                               textColor='white'
+                               radius='0 100% 100% 100%'
+                        />
+                    </Link>
                 </div>
                 <a id="main-logo" className="text" href="/">
                     prodemy

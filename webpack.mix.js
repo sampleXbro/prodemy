@@ -14,7 +14,8 @@ const mix = require('laravel-mix');
 //mix.sass('src', 'output', { implementation: require('node-sass') });
 
 mix.react('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.sass', 'dest', { implementation: require('node-sass') })
+    //.sass('resources/sass/app.sass', 'dest', { implementation: require('node-sass') })
+    .sass('resources/sass/app.sass', 'public/css')
     .options({
         processCssUrls: false
     })

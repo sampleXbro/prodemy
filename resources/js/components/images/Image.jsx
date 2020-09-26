@@ -23,10 +23,10 @@ export default function Image({path, title, size = '300px', margin, borderRadius
     };
 
     return <img
+        className={className}
         src={image}
         onError={()=>{setImage('/images/no-image.png')}}
         alt={title}
         style={styles}
-        className={className}
     />
 }

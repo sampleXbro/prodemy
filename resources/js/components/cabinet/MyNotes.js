@@ -42,8 +42,8 @@ export const MyNotes = React.memo(({courses}) => {
                     <thead>
                     <tr>
                         <th scope="col">№</th>
-                        <th scope="col">Изображение курса</th>
-                        <th scope="col">Название курса</th>
+                        <th scope="col">Изобр.</th>
+                        <th scope="col">Курс</th>
                         <th scope="col">Заметки</th>
                     </tr>
                     </thead>

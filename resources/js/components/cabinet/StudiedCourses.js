@@ -19,7 +19,6 @@ export const StudiedCourses = React.memo(({user, courses}) => {
         return (
             <tr key={course.id} >
                 <th scope="row">{i+1}</th>
-                <td><Image path={course.image} size={'50px'} title={course.title}/></td>
                 <td><Link to={`/portal/course/${course.id}`}>{course.title}</Link></td>
                 <td><ProgressBar progress={Math.round(item.course_position*100)}/></td>
                 <td>{moment(item.created_at).format('DD.MM.YYYY HH:mm')}</td>
@@ -34,10 +33,9 @@ export const StudiedCourses = React.memo(({user, courses}) => {
                     <thead>
                     <tr>
                         <th scope="col">№</th>
-                        <th scope="col">Изображение курса</th>
-                        <th scope="col">Название курса</th>
+                        <th scope="col">Курс</th>
                         <th scope="col">Прогресс</th>
-                        <th scope="col">Начало изучения</th>
+                        <th scope="col">Начало</th>
                     </tr>
                     </thead>
                     <tbody>

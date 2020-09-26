@@ -88,7 +88,7 @@ export function CabinetPage({user, courses}) {
                 </div>
 
                 <div className='d-flex w-100 flex-column'>
-                    <div className='d-flex  justify-content-between'>
+                    <div className='d-flex  justify-content-between cabinet-role-container'>
                         <div className='d-flex align-items-center'>
                             <Title
                                 size='18px'

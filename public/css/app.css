@@ -1,4 +1,21 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap);@import url(https://fonts.googleapis.com/css2?family=Audiowide&display=swap);@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap);@charset "UTF-8";
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @-webkit-keyframes popUp {
   0% {
     transform: scale(0, 0);
@@ -10,6 +27,7 @@
     transform: scale(1, 1);
   }
 }
+
 @keyframes popUp {
   0% {
     transform: scale(0, 0);
@@ -67,21 +85,6 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .course-list-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .titleComponent {
-    text-align: center;
-  }
-  .single-course-description-area {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -273,7 +276,7 @@
   flex-direction: column;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.85);
-  margin: 15px;
+  margin: 15px 5px;
   background-color: antiquewhite;
 }
 
@@ -481,7 +484,7 @@
 
 .user-block-container, .user-block-container-selected {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex: 1;
   max-height: 50px;
@@ -573,6 +576,11 @@
 
 .dislike-button {
   color: #e3342f;
+}
+
+.chat-outer-container {
+  bottom: 5%;
+  right: 7%;
 }
 
 .comment-container {
@@ -838,6 +846,7 @@
 
 .single-popup-message {
   display: flex;
+  flex-direction: column;
   flex: 1;
   min-height: 50px;
   background: linear-gradient(357deg, #f38300 0%, #f3d400 100%);
@@ -845,12 +854,30 @@
   margin: 5px;
   padding: 5px;
   transform-origin: top right;
+  transition-duration: 200ms;
   -webkit-animation: popUp 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
           animation: popUp 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .single-popup-message-hide {
+  transition-duration: 200ms;
   opacity: 0;
+}
+
+.small-nav-panel-avatar-container {
+  right: -10px;
+  top: 3px;
+}
+
+.small-nav-panel-badge {
+  right: -10px;
+  top: 30px;
+}
+
+.cabinet-search-input {
+  position: absolute;
+  width: 280px;
+  opacity: .9;
 }
 
 /*!
@@ -10881,6 +10908,71 @@ hr {
   height: 1px;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .cabinet-page-container {
+    flex-direction: column;
+  }
+  .cabinet-role-container {
+    flex-direction: column;
+  }
+  .users-messages-container {
+    min-width: 100%;
+    max-height: 150px;
+  }
+  .show-message-window {
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+  }
+  .cabinet-search-input {
+    width: 100%;
+    padding-right: 40px;
+  }
+  .messages-list-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .course-list-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0 0 0;
+    text-align: center;
+  }
+  .titleComponent {
+    text-align: center;
+  }
+  .single-course-description-area {
+    flex-direction: column;
+    align-items: center;
+  }
+  .single-comment {
+    margin-right: 0;
+  }
+  .comment-avatar-area {
+    padding: 0;
+  }
+  .single-course-container {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+  }
+  .chat-outer-container {
+    right: 10px;
+    bottom: 5px;
+  }
+  .small-nav-panel-avatar-container {
+    right: 75px;
+    top: 15px;
+  }
+  .small-nav-panel-badge {
+    right: 47px;
+    top: 15px;
+  }
 }
 
 .navbar {

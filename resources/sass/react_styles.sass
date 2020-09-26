@@ -1,17 +1,6 @@
 @import 'variables'
 @import 'animations'
 
-@media screen and (max-width: 850px)
-    .course-list-container
-        flex-direction: column
-        align-items: center
-        justify-content: center
-    .titleComponent
-        text-align: center
-    .single-course-description-area
-        flex-direction: column
-        align-items: center
-
 .container-fluid
     max-width: 1250px
 
@@ -295,9 +284,9 @@
     transition-duration: 200ms
 
 .send-message-button:active
-    //transition-duration: 200ms
-    //transform: scale(1.2) rotate(360deg)
-    animation: rotation 500ms ease-in forwards
+    transition-duration: 200ms
+    transform: scale(1.2) rotate(360deg)
+
 
 .chat-messages-area
     display: flex
@@ -454,6 +443,10 @@
 .dislike-button
     @extend .like-button
     color: $red
+
+.chat-outer-container
+    bottom: 5%
+    right: 7%
 
 .comment-container
     display: flex
@@ -705,3 +698,16 @@
 .single-popup-message-hide
     transition-duration: 200ms
     opacity: 0
+
+.small-nav-panel-avatar-container
+    right: -10px
+    top: 3px
+
+.small-nav-panel-badge
+    right: -10px
+    top: 30px
+
+.cabinet-search-input
+    position: absolute
+    width: 280px
+    opacity: .9
