@@ -1,5 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
-import Image from "../images/Image";
+import React, {useEffect} from 'react';
 import {Link} from "react-router-dom";
 import moment from "moment";
 import {ProgressBar} from "../progress/ProgressBar";
@@ -7,7 +6,7 @@ import {Title} from "../titles/Title";
 import actions from "../../redux/actions/actionTypes";
 import {useDispatch} from "react-redux";
 
-export const StudiedCourses = React.memo(({user, courses}) => {
+export const StudiedCourses = ({user, courses}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {dispatch({type: actions.GET_ALL_COURSES})}, []);
@@ -45,4 +44,4 @@ export const StudiedCourses = React.memo(({user, courses}) => {
             </div>
         </>
     )
-});
+};

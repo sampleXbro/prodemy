@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {addRole, addSoftware, updateRole, updateSoftware} from "../../redux/actions/actionCreators";
 import {Title} from "../titles/Title";
 import {Input} from "../inputs/Input";

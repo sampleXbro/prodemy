@@ -156,7 +156,7 @@ export function CabinetPage({user, courses}) {
             </div>
             <div className='container-xl cabinet-page-container'>
                 {slug === 'studied-courses' && <StudiedCourses user={user} courses={courses}/>}
-                {slug === 'my-reviews' && <MyReviews id={user.id} reviews={reviewsByUser}/>}
+                {slug === 'my-reviews' && <MyReviews reviews={reviewsByUser}/>}
                 {slug === 'my-notes' && <MyNotes courses={courses}/>}
                 {slug === 'my-messages' && <MyMessages currentUser={user} users={users}/>}
             </div>

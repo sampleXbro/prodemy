@@ -4,14 +4,14 @@ import actionTypes from "../../redux/actions/actionTypes";
 import Image from "../images/Image";
 import moment from 'moment'
 import {truncateText} from "../../utils/truncateText";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {EditCourse} from "./EditCourse";
 import {Link} from "react-router-dom";
 import {AddCourse} from "./AddCourse";
 
 export function Courses({scrollMultiplier, search, currentUser}) {
     const {courses, isLoading} = useSelector(store => store.coursesReducer);
-    const [modal, setModal] = useState(null);
+    const [modal, setModal] = useState({type: '', id: ''});
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export function Courses({scrollMultiplier, search, currentUser}) {
                 <th scope="row">{course.id}</th>
                 <td><Image path={course.image} size='80px' title={course.title} /></td>
                 <td><a href={course.link} target='_blank'>{course.link}</a></td>
-                <td onClick={() => setModal(<EditCourse id={course.id} setModal={setModal}/>)}>
+                <td onClick={() => setModal({type: 'edit', id: course.id})}>
                     <h5 className="fas fa-edit text-warning"/>
                 </td>
                 <td><Link to={`/portal/course/${course.id}`} target='_blank'>{course.title}</Link></td>
@@ -54,8 +54,9 @@ export function Courses({scrollMultiplier, search, currentUser}) {
     return (
         <>
             {isLoading && <Preloader/>}
-            {modal}
-            <div className={'addButton'} onClick={() => setModal(<AddCourse setModal={setModal} currentUser={currentUser}/>)}>
+            {modal.type === 'add' && <AddCourse setModal={setModal} currentUser={currentUser}/>}
+            {modal.type === 'edit' && <EditCourse id={modal.id} setModal={setModal}/>}
+            <div className={'addButton'} onClick={() => setModal({...modal, type: 'add'})}>
                 <h3 className="fas fa-plus" style={{margin: 0}}/>
             </div>
             <table className='table table-bordered table-dark'>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {deleteReview, getReviewsByUserId} from "../../redux/actions/actionCreators";
+import {deleteReview} from "../../redux/actions/actionCreators";
 import Image from "../images/Image";
 import moment from "moment";
 import {Link} from "react-router-dom";
@@ -9,8 +9,8 @@ import {useDispatch} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
 
 
-export const MyReviews = React.memo(({id, reviews}) => {
-    const [modal, setModal] = useState('');
+export const MyReviews = ({reviews}) => {
+    const [selectedReview, setSelectedReview] = useState('');
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,20 +20,19 @@ export const MyReviews = React.memo(({id, reviews}) => {
     if(reviews.length < 1) return <Title size={'16px'} margin={'5px'} textAlign={'center'} text={'Похоже, отзывов ещё нет...'}/>;
 
     const handleCloseModalClick = () => {
-        setModal('')
+        setSelectedReview('')
     };
 
     const handleDeleteReviewClick = (reviewId) => {
         dispatch(deleteReview(reviewId));
-        setModal('');
+        setSelectedReview('');
     };
 
-    const handleCeilClick = (id) => {
-        const fullReview = [];
-
+    const modalWindow = (id) => {
+        const modalReview = [];
         reviews.map((review) => {
-            if(review.id === id){
-                fullReview.push(
+        if(review.id === id){
+            modalReview.push(
                     <div key={id} className='modal-window'>
                         <Image size={'300px'} path={review.course.image} />
                         <Title size={'18px'} margin={'5px'} textAlign={'center'} text={review.course.title.toUpperCase()}/>
@@ -48,11 +47,11 @@ export const MyReviews = React.memo(({id, reviews}) => {
                     </div>
                 )
             }
-        });
 
-        setModal(
+        });
+        return (
             <div className={'modal-container'}>
-                {fullReview}
+                {modalReview}
             </div>
         );
     };
@@ -62,7 +61,7 @@ export const MyReviews = React.memo(({id, reviews}) => {
             : review.rev_rating === 4 ? 'table-warning'
                 : review.rev_rating < 4 ? 'table-danger' : '';
         return (
-            <tr key={review.id} className={color} onClick={() => handleCeilClick(review.id)}>
+            <tr key={review.id} className={color} onClick={() => setSelectedReview(review.id)}>
                 <th scope="row">{i+1}</th>
                 <td><Link to={`/portal/course/${review.course.id}`}>{review.course.title}</Link></td>
                 <td>{review.rev_rating} з 5</td>
@@ -73,7 +72,7 @@ export const MyReviews = React.memo(({id, reviews}) => {
 
     return (
         <>
-            {modal}
+            {selectedReview && modalWindow(selectedReview)}
 
             <div className='cabinet-page-container'>
                 <table className="table">
@@ -92,4 +91,4 @@ export const MyReviews = React.memo(({id, reviews}) => {
             </div>
         </>
     )
-});
+};

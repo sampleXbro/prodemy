@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import Image from "../images/Image";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {FlatButton} from "../buttons/FlatButton";
 import {addCourse} from "../../redux/actions/actionCreators";
 import ReactPlayer from "react-player";
@@ -53,7 +53,7 @@ export function AddCourse({setModal, currentUser}) {
             setError('Заполните все поля');
         } else{
             if(ReactPlayer.canPlay(localState.link)){
-                setModal('');
+                setModal(false);
                 dispatch(addCourse(localState));
             } else {
                 setError('Ссылка на видео не верна или видео недоступно')

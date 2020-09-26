@@ -4,9 +4,8 @@ import {Filter} from "../courses/Filter";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
 import {ItemsList} from "../itemsList/ItemsList";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {Title} from "../titles/Title";
-import {ErrorWindow} from "../errors/ErrorWindow";
 
 export const BasicsPage = () => {
     const {posts, isLoading} = useSelector(store => store.postsReducer);

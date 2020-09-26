@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {FlatButton} from "../buttons/FlatButton";
 import {deleteComment, updateComment} from "../../redux/actions/actionCreators";
 

@@ -3,12 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
 import Image from "../images/Image";
 import moment from 'moment'
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {EditUser} from "./EditUser";
 
 export function Users({scrollMultiplier, search}) {
     const {users, isLoading} = useSelector(store => store.userReducer);
-    const [modal, setModal] = useState(null);
+    const [selectedUser, setSelectedUser] = useState('');
 
     const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ export function Users({scrollMultiplier, search}) {
                 <td><Image path={user.avatar} size='80px' title={user.name} /></td>
                 <td>
                     <h5 className="fas fa-user-edit text-warning d-flex justify-content-center"
-                       onClick={() => setModal(<EditUser id={user.id} setModal={setModal}/>)}
+                       onClick={() => setSelectedUser(user.id)}
                     />
                 </td>
                 <td>{user.name}</td>
@@ -46,7 +46,7 @@ export function Users({scrollMultiplier, search}) {
     return (
         <>
             {isLoading && <Preloader/>}
-            {modal}
+            {selectedUser && <EditUser id={selectedUser} setModal={setSelectedUser}/>}
 
             <table className='table table-bordered table-dark'>
                 <thead>

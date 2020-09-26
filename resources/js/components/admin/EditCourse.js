@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getCourseById, getUserById, updateCourse, updateUser} from "../../redux/actions/actionCreators";
 import Image from "../images/Image";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {FlatButton} from "../buttons/FlatButton";
 import ReactPlayer from "react-player";
 import {Title} from "../titles/Title";

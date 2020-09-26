@@ -10,7 +10,7 @@ import {
     getPostById,
     likePost, updateComment
 } from "../../redux/actions/actionCreators";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {ProgressBar} from "../progress/ProgressBar";
 import Image from "../images/Image";
 import {momentTime} from "../../utils/momentTime";

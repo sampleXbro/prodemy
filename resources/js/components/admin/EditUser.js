@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getUserById, updateUser} from "../../redux/actions/actionCreators";
 import Image from "../images/Image";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {FlatButton} from "../buttons/FlatButton";
 
 export function EditUser({id, setModal}) {

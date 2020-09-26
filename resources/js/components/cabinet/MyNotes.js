@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import actions from "../../redux/actions/actionTypes";
 
 
-export const MyNotes = React.memo(({courses}) => {
+export const MyNotes = ({courses}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -54,4 +54,4 @@ export const MyNotes = React.memo(({courses}) => {
             </div>
         </>
     )
-});
+};

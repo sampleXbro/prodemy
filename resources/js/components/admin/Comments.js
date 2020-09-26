@@ -4,11 +4,11 @@ import actionTypes from "../../redux/actions/actionTypes";
 import Image from "../images/Image";
 import moment from 'moment'
 import {Link} from "react-router-dom";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {EditComment} from "./EditComment";
 
 export function Comments({scrollMultiplier, search}) {
-    const [modal, setModal] = useState(null);
+    const [selectedComment, setSelectedComment] = useState('');
     const {comments, isLoading} = useSelector(store => store.commentsReducer);
     const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ export function Comments({scrollMultiplier, search}) {
             <tr key={comment.id}>
                 <th scope="row">{comment.id}</th>
                 <td><Image path={comment.author.avatar} size='80px' title={comment.author.name} /></td>
-                <td onClick={() => setModal(<EditComment comment={comment} setModal={setModal}/>)}>
+                <td onClick={() => setSelectedComment(comment)}>
                     <h5 className="fas fa-edit text-warning"/>
                 </td>
                 <td>{comment.author.name}</td>
@@ -41,7 +41,7 @@ export function Comments({scrollMultiplier, search}) {
     return (
         <>
             {isLoading && <Preloader/>}
-            {modal}
+            {selectedComment && <EditComment comment={selectedComment} setModal={setSelectedComment}/>}
             <table className='table table-bordered table-dark'>
                 <thead>
                     <tr>

@@ -4,7 +4,7 @@ import {Filter} from "./Filter";
 import {useDispatch, useSelector} from "react-redux";
 import actions from "../../redux/actions/actionTypes";
 import {ItemsList} from "../itemsList/ItemsList";
-import {Preloader} from "./Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {Title} from "../titles/Title";
 
 export function CoursesPage({courses}){

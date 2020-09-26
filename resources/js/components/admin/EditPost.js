@@ -6,7 +6,7 @@ import {
 } from "../../redux/actions/actionCreators";
 import Image from "../images/Image";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {FlatButton} from "../buttons/FlatButton";
 import ReactPlayer from "react-player";
 import {Title} from "../titles/Title";
@@ -90,7 +90,6 @@ export function EditPost({id, setModal}) {
                 <input
                     type="text"
                     defaultValue={currentPost.video_link}
-                    value={localState.video_link}
                     onChange={e => setLocalState({...localState, video_link: e.target.value})}
                 />
                 Описание:

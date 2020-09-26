@@ -4,11 +4,11 @@ import actionTypes from "../../redux/actions/actionTypes";
 import Image from "../images/Image";
 import moment from 'moment'
 import {Link} from "react-router-dom";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {EditReview} from "./EditReview";
 
 export function Reviews({scrollMultiplier, search}) {
-    const [modal, setModal] = useState(null);
+    const [selectedReview, setSelectedReview] = useState('');
     const {reviews, isLoading} = useSelector(store => store.reviewsReducer);
     const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ export function Reviews({scrollMultiplier, search}) {
             <tr key={review.id} className={color} style={{color: 'black'}}>
                 <th scope="row">{review.id}</th>
                 <td><Image path={review.author.avatar} size='80px' title={review.author.name} /></td>
-                <td onClick={() => setModal(<EditReview review={review} setModal={setModal}/>)}>
+                <td onClick={() => setSelectedReview(review)}>
                     <h5 className="fas fa-edit text-dark"/>
                 </td>
                 <td>{review.author.name}</td>
@@ -45,7 +45,7 @@ export function Reviews({scrollMultiplier, search}) {
     return (
         <>
             {isLoading && <Preloader/>}
-            {modal}
+            {selectedReview && <EditReview review={selectedReview} setModal={setSelectedReview}/>}
             <table className='table table-bordered table-dark'>
                 <thead>
                     <tr>

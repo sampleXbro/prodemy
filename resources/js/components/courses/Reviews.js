@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Title} from "../titles/Title";
 import StarRatings from "react-star-ratings";
 import {momentTime} from "../../utils/momentTime";

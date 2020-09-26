@@ -15,7 +15,7 @@ import {AdvancedPage} from "./advanced/AdvancedPage";
 import {SinglePostPage} from "./posts/SinglePostPage";
 import {ErrorWindow} from "./errors/ErrorWindow";
 import {AdminPanel} from "./admin/AdminPanel";
-import {Preloader} from "./courses/Preloader";
+import {Preloader} from "./preloaders/Preloader";
 
 export default function App() {
     const {courses} = useSelector(store => store.coursesReducer);

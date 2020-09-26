@@ -4,14 +4,14 @@ import actionTypes from "../../redux/actions/actionTypes";
 import Image from "../images/Image";
 import moment from 'moment'
 import {truncateText} from "../../utils/truncateText";
-import {Preloader} from "../courses/Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import {EditPost} from "./EditPost";
 import {Link} from "react-router-dom";
 import {AddPost} from "./AddPost";
 
 export function Posts({scrollMultiplier, search, currentUser}) {
     const {posts, isLoading} = useSelector(store => store.postsReducer);
-    const [modal, setModal] = useState(null);
+    const [modal, setModal] = useState({type: '', id: ''});
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export function Posts({scrollMultiplier, search, currentUser}) {
             <tr key={post.id}>
                 <th scope="row">{post.id}</th>
                 <td><Image path={post.image} size='80px' title={post.title} /></td>
-                <td onClick={() => setModal(<EditPost id={post.id} setModal={setModal}/>)}>
+                <td onClick={() => setModal({type: 'edit', id: post.id})}>
                     <h5 className="fas fa-edit text-warning"/>
                 </td>
                 <td><Link to={`/portal/post/${post.id}`} target='_blank'>{post.title}</Link></td>
@@ -49,8 +49,9 @@ export function Posts({scrollMultiplier, search, currentUser}) {
     return (
         <>
             {isLoading && <Preloader/>}
-            {modal}
-            <div className={'addButton'} onClick={() => setModal(<AddPost setModal={setModal} currentUser={currentUser}/>)}>
+            {modal.type === 'add' && <AddPost setModal={setModal} currentUser={currentUser}/>}
+            {modal.type === 'edit' && <EditPost id={modal.id} setModal={setModal}/>}
+            <div className={'addButton'} onClick={() => setModal({...modal, type: 'add'})}>
                 <h3 className="fas fa-plus" style={{margin: 0}}/>
             </div>
             <table className='table table-bordered table-dark'>

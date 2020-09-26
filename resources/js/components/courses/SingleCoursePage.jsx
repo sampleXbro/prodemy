@@ -13,7 +13,7 @@ import {
     updateStudiedCourse
 } from "../../redux/actions/actionCreators";
 import {ProgressBar} from "../progress/ProgressBar";
-import {Preloader} from "./Preloader";
+import {Preloader} from "../preloaders/Preloader";
 import actionTypes from "../../redux/actions/actionTypes";
 
 export function SingleCoursePage({user}){
