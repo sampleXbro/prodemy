@@ -38,7 +38,7 @@ export const ItemsList = ({items, softwareId, itemType}) => {
     return (
         <div>
             <div className={'search-bar-container'} >
-                <Title weight={300} size={18} text={`Найдено ${itemsListJsx.length} обучающих материалов`} margin={'10px'}/>
+                <Title weight={300} size={18} text={`Найдено ${itemsListJsx.length}`} margin={'10px'}/>
                 <Input value={input} onChange={(e) => handleInputChange(e.target.value.toLowerCase())}/>
             </div>
             {itemsListJsx}

@@ -875,7 +875,10 @@
 }
 
 .cabinet-search-input {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 280px;
   opacity: .9;
 }
@@ -10928,7 +10931,6 @@ hr {
   }
   .cabinet-search-input {
     width: 100%;
-    padding-right: 40px;
   }
   .messages-list-container {
     width: 100%;

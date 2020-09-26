@@ -61,11 +61,11 @@ export const MyMessages = ({currentUser, users}) => {
 
     return (
         <div className='cabinet-page-container'>
-            <div className='users-messages-container'>
-                <div className='d-flex justify-content-center cabinet-search-input'>
+            <div className='users-messages-container position-relative'>
+                <div className='d-flex cabinet-search-input'>
                     <Input onChange={handleInput} value={input} placeholder='Поиск по имени' width='100%'/>
                 </div>
-                <br/>
+
                 {usersJsx}
             </div>
             <PrivateMessages selectedUserId={selectedUser} users={users} currentUser={currentUser} messages={messages}/>

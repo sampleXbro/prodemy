@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Input = ({value, onChange, placeholder = 'Кто ищет - тот всегда найдет!', width, textAlign, margin}) => {
+export const Input = ({value, onChange, placeholder = 'Кто ищет - тот найдет!', width, textAlign, margin}) => {
 
     const dynStyle = {
         width: width,
