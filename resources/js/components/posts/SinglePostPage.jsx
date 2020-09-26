@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useEffect, useMemo} from 'react'
 import {useParams} from "react-router";
 import {useSelector, useDispatch} from "react-redux";
 import ReactPlayer from 'react-player'
@@ -23,11 +23,15 @@ export function SinglePostPage({user}){
     const dispatch = useDispatch();
 
     useEffect(() => {
+        document.title = 'prodemy';
         dispatch(getPostById(id));
         dispatch(getCommentsByPostId(id));
         window.scrollTo(0, 0);
-        document.title = 'prodemy - ' + currentPost.title
     }, []);
+
+    useMemo(() => {
+        if(currentPost.title) document.title = 'prodemy - ' + currentPost.title
+    }, [currentPost]);
 
     if(currentPost.length < 1) return <Preloader/>;
 

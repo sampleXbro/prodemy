@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef, useMemo} from 'react'
 import {useParams} from "react-router";
 import {useSelector, useDispatch} from "react-redux";
 import ReactPlayer from 'react-player/youtube'
@@ -25,11 +25,15 @@ export function SingleCoursePage({user}){
     const player = useRef(null);
 
     useEffect(() => {
+        document.title = 'prodemy';
         dispatch(getCourseById(id));
         dispatch({type: actionTypes.GET_ALL_REVIEWS});
         window.scrollTo(0, 0);
-        document.title = 'prodemy - ' + singleCourse.title
     }, []);
+
+    useMemo(() => {
+        if(singleCourse.title) document.title = 'prodemy - ' + singleCourse.title
+    }, [singleCourse]);
 
     if(singleCourse.length < 1) return <Preloader/>;
 
