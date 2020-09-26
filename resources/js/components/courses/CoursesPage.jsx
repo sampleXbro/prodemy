@@ -6,8 +6,6 @@ import actions from "../../redux/actions/actionTypes";
 import {ItemsList} from "../itemsList/ItemsList";
 import {Preloader} from "./Preloader";
 import {Title} from "../titles/Title";
-import {ErrorWindow} from "../errors/ErrorWindow";
-
 
 export function CoursesPage({courses}){
     const {isLoading} = useSelector(store => store.coursesReducer);
@@ -16,6 +14,7 @@ export function CoursesPage({courses}){
 
     useEffect(() => {
         dispatch({type: actions.GET_ALL_COURSES});
+        document.title = 'prodemy - Обучающие курсы'
     },[]);
 
     return (

@@ -14,7 +14,8 @@ export const AdvancedPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({type: actionTypes.GET_ALL_POSTS})
+        dispatch({type: actionTypes.GET_ALL_POSTS});
+        document.title = 'prodemy - Продвинутые техники'
     }, []);
 
     const filteredPosts = posts.filter((post) => ((softwareId ? post.software_id === softwareId : post) && post.type.post_type === 'advanced'));

@@ -15,7 +15,6 @@ import {CoursesLevels} from "./CoursesLevels";
 import {Link, useParams} from "react-router-dom";
 import {FlatButton} from "../buttons/FlatButton";
 import {Badge} from "../badges/Badge";
-import Image from "../images/Image";
 
 export function AdminPanel({mUnreadMessagesQty}) {
     const [scrollMultiplier, setScrollMultiplier] = useState(1);
@@ -28,6 +27,7 @@ export function AdminPanel({mUnreadMessagesQty}) {
     useEffect(() => {
         dispatch({type: actionTypes.GET_ADMIN_INITIAL});
         dispatch({type: actionTypes.GET_CURRENT_USER});
+        document.title = 'prodemy - Панель администратора'
     }, []);
 
     const menuTabs = [

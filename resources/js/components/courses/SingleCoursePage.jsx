@@ -28,6 +28,7 @@ export function SingleCoursePage({user}){
         dispatch(getCourseById(id));
         dispatch({type: actionTypes.GET_ALL_REVIEWS});
         window.scrollTo(0, 0);
+        document.title = 'prodemy - ' + singleCourse.title
     }, []);
 
     if(singleCourse.length < 1) return <Preloader/>;

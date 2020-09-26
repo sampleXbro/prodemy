@@ -21,6 +21,7 @@ export function CabinetPage({user, courses}) {
 
     useEffect(() => {
         dispatch({type: actionTypes.GET_ALL_USERS});
+        document.title = 'prodemy - Личный кабинет'
     }, []);
 
     const reviewsByUser = reviews.filter((review) => review.author_id === user.id);

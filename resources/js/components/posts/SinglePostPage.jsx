@@ -26,6 +26,7 @@ export function SinglePostPage({user}){
         dispatch(getPostById(id));
         dispatch(getCommentsByPostId(id));
         window.scrollTo(0, 0);
+        document.title = 'prodemy - ' + currentPost.title
     }, []);
 
     if(currentPost.length < 1) return <Preloader/>;
