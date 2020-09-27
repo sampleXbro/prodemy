@@ -18,7 +18,7 @@ export const ItemsList = ({items, softwareId, itemType}) => {
         }
     }, []);
 
-    window.onscroll = function sc(ev) {
+    window.onscroll = (ev) =>  {
         const set = () => {
             setQtyList(qtyList + 5);
         };

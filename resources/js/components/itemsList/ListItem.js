@@ -16,7 +16,7 @@ export function ListItem({item, itemType = 'course'}){
         return sum / reviews.length
     };
 
-    const postRatings = () => {
+    const postRatings = (item) => {
         const likes = item.likes_count;
         const dislikes = item.dislikes_count;
         const percent = (likes || dislikes) && (likes * 100 / (likes + dislikes)).toFixed(0);
@@ -94,13 +94,13 @@ export function ListItem({item, itemType = 'course'}){
                     <div className='d-flex flex-column align-items-center justify-content-center'>
                         <div className='d-flex w-100 justify-content-around mb-2'>
                             <i className="fas fa-thumbs-up text-success">
-                                <Title text={` ${postRatings().likes}`} margin={0} weight={300}/>
+                                <Title text={` ${postRatings(item).likes}`} margin={0} weight={300}/>
                             </i>
                             <i className="fas fa-thumbs-down text-danger">
-                                <Title text={` ${postRatings().dislikes}`} margin={0} weight={300}/>
+                                <Title text={` ${postRatings(item).dislikes}`} margin={0} weight={300}/>
                             </i>
                         </div>
-                        <ProgressBar progress={postRatings().percent} height='10px' borderRadius='5px' color='#38c172' width='120px'/>
+                        <ProgressBar progress={postRatings(item).percent} height='10px' borderRadius='5px' color='#38c172' width='120px'/>
                     </div>
                     }
                 </div>

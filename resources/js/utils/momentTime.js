@@ -10,8 +10,8 @@ export function momentTime(created_at){
     const currentTime = moment.tz(timeZone);
 
     if(currentTime.diff(timeLoc, 'hour') < 2){
-        return timeLoc.fromNow();
-    } else if(currentTime.diff(timeLoc, 'day') < 2) {
+        return timeLoc.subtract(10, 'seconds').fromNow();
+    } else if(currentTime.diff(timeLoc, 'hour') < 24) {
         return timeLoc.calendar();
     } else {
         return timeLoc.format('Do MMM YYг. в HH:mm')
