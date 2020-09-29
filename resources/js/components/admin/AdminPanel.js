@@ -1,22 +1,23 @@
 import React, {useEffect, useState} from 'react';
-import {Title} from "../titles/Title";
-import {useDispatch, useSelector} from "react-redux";
-import actionTypes from "../../redux/actions/actionTypes";
 import {Users} from "./Users";
-import {Courses} from "./Courses";
 import {Posts} from "./Posts";
+import {Courses} from "./Courses";
 import {Reviews} from "./Reviews";
+import PropTypes from "prop-types";
 import {Comments} from "./Comments";
 import {Software} from "./Software";
+import {Title} from "../titles/Title";
 import {Input} from "../inputs/Input";
+import {Badge} from "../badges/Badge";
 import {UsersRoles} from "./UsersRoles";
 import {UsersLevels} from "./UserLevels";
 import {CoursesLevels} from "./CoursesLevels";
 import {Link, useParams} from "react-router-dom";
 import {FlatButton} from "../buttons/FlatButton";
-import {Badge} from "../badges/Badge";
+import {useDispatch, useSelector} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
 
-export function AdminPanel({mUnreadMessagesQty}) {
+export function AdminPanel({myUnreadMessagesQty}) {
     const [scrollMultiplier, setScrollMultiplier] = useState(1);
     const [search, setSearch] = useState('');
     const {data} = useSelector(store => store.adminReducer);
@@ -95,7 +96,7 @@ export function AdminPanel({mUnreadMessagesQty}) {
 
                     <div className='position-absolute' style={{right: '30px', top: '20px'}}>
                         <Link to='/portal/cabinet/my-messages' style={{textDecoration: 'none', width: '100%'}}>
-                            <Badge text={mUnreadMessagesQty} color='#38c172' size='20px' radius='0 100% 100% 100%' textColor='white' textSize='11px'/>
+                            <Badge text={myUnreadMessagesQty} color='#38c172' size='20px' radius='0 100% 100% 100%' textColor='white' textSize='11px'/>
                         </Link>
                     </div>
 
@@ -125,3 +126,7 @@ export function AdminPanel({mUnreadMessagesQty}) {
         </div>
     )
 }
+
+AdminPanel.propTypes = {
+    myUnreadMessagesQty: PropTypes.number
+};

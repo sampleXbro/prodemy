@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import StarRatings from "react-star-ratings";
+import React, {useState} from 'react';
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
+import {CoursesPage} from "./CoursesPage";
+import StarRatings from "react-star-ratings";
 import {useDispatch, useSelector} from "react-redux";
-import {getCourseById, sendReview} from "../../redux/actions/actionCreators";
+import {sendReview} from "../../redux/actions/actionCreators";
 
 export function WriteReview({user, reviews}) {
     const course = useSelector(store => store.coursesReducer.currentCourse);
@@ -43,7 +45,6 @@ export function WriteReview({user, reviews}) {
 
         if(rating > 0 && review.length > 3){
             dispatch(sendReview(newReview));
-            //dispatch(getCourseById(id));
         }
     }
 
@@ -90,3 +91,8 @@ export function WriteReview({user, reviews}) {
         </>
     )
 }
+
+CoursesPage.propTypes = {
+    user: PropTypes.object,
+    reviews: PropTypes.array,
+};

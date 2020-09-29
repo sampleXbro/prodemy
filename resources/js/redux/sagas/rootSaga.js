@@ -1,17 +1,17 @@
-import { takeLatest } from 'redux-saga/effects';
-import actions from '../actions/actionTypes';
-import * as coursesSagas from './coursesSagas';
 import * as userSagas from './userSagas';
-import * as reviewsSagas from './reviewsSagas';
-import * as messagesSagas from './messagesSagas';
 import * as postsSagas from './postsSagas';
-import * as commentsSagas from './commentsSagas';
 import * as adminSagas from './adminSagas';
 import * as rolesSagas from './rolesSagas';
-import * as usersLevelsSagas from './usersLevelsSagas';
-import * as coursesLevelsSagas from './coursesLevelsSagas';
+import actions from '../actions/actionTypes';
+import * as coursesSagas from './coursesSagas';
+import * as reviewsSagas from './reviewsSagas';
+import { takeLatest } from 'redux-saga/effects';
+import * as messagesSagas from './messagesSagas';
+import * as commentsSagas from './commentsSagas';
 import * as softwareSagas from './softwareSagas';
 import * as postsTypesSagas from './postsTypesSagas';
+import * as usersLevelsSagas from './usersLevelsSagas';
+import * as coursesLevelsSagas from './coursesLevelsSagas';
 
 
 function* rootSaga() {

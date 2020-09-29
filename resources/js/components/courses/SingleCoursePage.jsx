@@ -1,20 +1,21 @@
 import React, {useState, useEffect, useRef, useMemo} from 'react'
-import {useParams} from "react-router";
-import {useSelector, useDispatch} from "react-redux";
-import ReactPlayer from 'react-player/youtube'
-import {Title} from "../titles/Title";
-import {Reviews} from "./Reviews";
 import {Notes} from "./Notes";
+import {Reviews} from "./Reviews";
+import PropTypes from "prop-types";
+import {Title} from "../titles/Title";
+import {useParams} from "react-router";
 import {WriteReview} from "./WriteReview";
+import ReactPlayer from 'react-player/youtube';
+import {Preloader} from "../preloaders/Preloader";
+import {ProgressBar} from "../progress/ProgressBar";
+import {useSelector, useDispatch} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
 import {
     createStudiedCourse,
     deleteStudiedCourse,
     getCourseById,
     updateStudiedCourse
 } from "../../redux/actions/actionCreators";
-import {ProgressBar} from "../progress/ProgressBar";
-import {Preloader} from "../preloaders/Preloader";
-import actionTypes from "../../redux/actions/actionTypes";
 
 export function SingleCoursePage({user}){
     const {id} = useParams();
@@ -171,3 +172,7 @@ export function SingleCoursePage({user}){
         </div>
     )
 }
+
+SingleCoursePage.propTypes = {
+    user: PropTypes.object,
+};

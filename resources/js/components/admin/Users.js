@@ -1,10 +1,11 @@
-import React, {useEffect, useState, Suspense} from 'react';
+import React, {useEffect, useState} from 'react';
+import moment from 'moment'
+import PropTypes from "prop-types";
+import Image from "../images/Image";
+import {EditUser} from "./EditUser";
+import {Preloader} from "../preloaders/Preloader";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import Image from "../images/Image";
-import moment from 'moment'
-import {Preloader} from "../preloaders/Preloader";
-import {EditUser} from "./EditUser";
 
 export function Users({scrollMultiplier, search}) {
     const {users, isLoading} = useSelector(store => store.userReducer);
@@ -69,3 +70,8 @@ export function Users({scrollMultiplier, search}) {
         </>
     )
 }
+
+Users.propTypes = {
+    scrollMultiplier: PropTypes.number,
+    search: PropTypes.string
+};

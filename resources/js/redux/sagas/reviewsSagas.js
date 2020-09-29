@@ -1,6 +1,6 @@
-import {put, select} from 'redux-saga/effects';
-import actions from '../actions/actionTypes';
 import * as api from '../../api/api';
+import actions from '../actions/actionTypes';
+import {put, select} from 'redux-saga/effects';
 
 
 export function* getAllReviewsSaga(action) {

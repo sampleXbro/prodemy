@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
@@ -38,3 +39,7 @@ export function Filter({setSoftwareId}){
         </div>
     )
 }
+
+Filter.propTypes = {
+    setSoftwareId: PropTypes.func,
+};

@@ -1,30 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {ListItem} from "./ListItem";
 import {Title} from "../titles/Title";
 import {Input} from "../inputs/Input";
+import {string, array, oneOfType, number} from "prop-types";
 
-export const ItemsList = ({items, softwareId, itemType}) => {
+export const ItemsList = ({items, softwareId, itemType, qtyList}) => {
 
     const [input, setInput] = useState('');
-    const [qtyList, setQtyList] = useState(5);
 
     const handleInputChange = (e) => {
         setInput(e);
-    };
-
-    useEffect(() => {
-        return () => {
-            window.onscroll = null
-        }
-    }, []);
-
-    window.onscroll = (ev) =>  {
-        const set = () => {
-            setQtyList(qtyList + 5);
-        };
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            set()
-        }
     };
 
     const itemsListJsx = items
@@ -44,4 +29,11 @@ export const ItemsList = ({items, softwareId, itemType}) => {
             {itemsListJsx}
         </div>
     )
+};
+
+ItemsList.proptypes = {
+    items: array,
+    softwareId: oneOfType([string, number]),
+    itemType: string,
+    qtyList: number
 };

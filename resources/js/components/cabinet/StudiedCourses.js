@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
-import {Link} from "react-router-dom";
 import moment from "moment";
-import {ProgressBar} from "../progress/ProgressBar";
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
-import actions from "../../redux/actions/actionTypes";
+import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
+import {ProgressBar} from "../progress/ProgressBar";
+import actions from "../../redux/actions/actionTypes";
 
 export const StudiedCourses = ({user, courses}) => {
     const dispatch = useDispatch();
@@ -44,4 +45,9 @@ export const StudiedCourses = ({user, courses}) => {
             </div>
         </>
     )
+};
+
+StudiedCourses.propTypes = {
+    courses: PropTypes.arrayOf(PropTypes.object),
+    user: PropTypes.object
 };

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {string, number, oneOfType} from "prop-types";
 
 export function ProgressBar({progress, height, width, color, borderRadius}) {
 
@@ -6,7 +7,6 @@ export function ProgressBar({progress, height, width, color, borderRadius}) {
         height: height,
         width: width,
         borderRadius: borderRadius
-
     };
 
     const dynStyle = {
@@ -24,3 +24,11 @@ export function ProgressBar({progress, height, width, color, borderRadius}) {
         </div>
     )
 }
+
+ProgressBar.propTypes = {
+    progress: oneOfType([string, number]),
+    height: string,
+    width: string,
+    color: string,
+    borderRadius: oneOfType([string, number])
+};

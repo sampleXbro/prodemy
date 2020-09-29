@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {object} from "prop-types";
 import {useDispatch} from "react-redux";
 import {addComment} from "../../redux/actions/actionCreators";
 
@@ -59,3 +60,8 @@ export function WriteComment({user, currentPost}) {
         </>
     )
 }
+
+WriteComment.propTypes = {
+    user: object,
+    currentPost: object
+};

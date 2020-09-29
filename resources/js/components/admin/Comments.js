@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import moment from 'moment'
+import PropTypes from "prop-types";
+import Image from "../images/Image";
+import {Link} from "react-router-dom";
+import {EditComment} from "./EditComment";
+import {Preloader} from "../preloaders/Preloader";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import Image from "../images/Image";
-import moment from 'moment'
-import {Link} from "react-router-dom";
-import {Preloader} from "../preloaders/Preloader";
-import {EditComment} from "./EditComment";
 
 export function Comments({scrollMultiplier, search}) {
     const [selectedComment, setSelectedComment] = useState('');
@@ -61,3 +62,8 @@ export function Comments({scrollMultiplier, search}) {
         </>
     )
 }
+
+Comments.propTypes = {
+    scrollMultiplier: PropTypes.number,
+    search: PropTypes.string
+};

@@ -1,17 +1,18 @@
 import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from "react-redux";
-import Image from "../images/Image";
-import {Title} from "../titles/Title";
-import {FlatButton} from "../buttons/FlatButton";
-import {StudiedCourses} from "./StudiedCourses";
-import {MyReviews} from "./MyReviews";
 import {MyNotes} from "./MyNotes";
-import {MyMessages} from "./MyMessages";
-import {FileInput} from "../inputs/FileInput";
-import {updateUser} from "../../redux/actions/actionCreators";
+import PropTypes from "prop-types";
+import Image from "../images/Image";
 import {Link} from "react-router-dom";
-import actionTypes from "../../redux/actions/actionTypes";
+import {Title} from "../titles/Title";
+import {MyReviews} from "./MyReviews";
+import {MyMessages} from "./MyMessages";
 import {useParams} from "react-router-dom";
+import {FileInput} from "../inputs/FileInput";
+import {StudiedCourses} from "./StudiedCourses";
+import {FlatButton} from "../buttons/FlatButton";
+import {useSelector, useDispatch} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
+import {updateUser} from "../../redux/actions/actionCreators";
 
 export function CabinetPage({user, courses}) {
     const {reviews} = useSelector((store) => store.reviewsReducer);
@@ -163,3 +164,8 @@ export function CabinetPage({user, courses}) {
         </>
     )
 }
+
+CabinetPage.propTypes = {
+    user: PropTypes.object,
+    courses: PropTypes.array,
+};

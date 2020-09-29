@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from "../images/Image";
 import {Title} from "../titles/Title";
-import StarRatings from "react-star-ratings";
 import {Link} from "react-router-dom";
+import StarRatings from "react-star-ratings";
 import {ProgressBar} from "../progress/ProgressBar";
+import {string, object} from "prop-types";
 
 export function ListItem({item, itemType = 'course'}){
 
@@ -111,4 +112,7 @@ export function ListItem({item, itemType = 'course'}){
     )
 }
 
-
+ListItem.propTypes = {
+    item: object,
+    itemType: string
+};

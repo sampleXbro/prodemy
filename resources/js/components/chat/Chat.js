@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {Title} from "../titles/Title";
-import {useDispatch, useSelector} from "react-redux";
-import actionTypes from "../../redux/actions/actionTypes";
-import {sendChatMessage} from "../../redux/actions/actionCreators";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
+import {Title} from "../titles/Title";
 import {momentTime} from "../../utils/momentTime";
 import {updatePrivateMessage} from "../../api/api";
+import {useDispatch, useSelector} from "react-redux";
 import {PopupMessages} from "../popup/PopupMessages";
-
+import actionTypes from "../../redux/actions/actionTypes";
+import {sendChatMessage} from "../../redux/actions/actionCreators";
 
 export const Chat = ({user, privateMessages}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -164,4 +164,9 @@ export const Chat = ({user, privateMessages}) => {
             </div>
         </>
     )
+};
+
+Chat.propTypes = {
+    user: PropTypes.object,
+    privateMessages: PropTypes.array,
 };

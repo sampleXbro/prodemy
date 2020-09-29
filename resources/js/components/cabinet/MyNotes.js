@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import {Title} from "../titles/Title";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
+import {Title} from "../titles/Title";
 import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/actionTypes";
-
 
 export const MyNotes = ({courses}) => {
     const dispatch = useDispatch();
@@ -54,4 +54,8 @@ export const MyNotes = ({courses}) => {
             </div>
         </>
     )
+};
+
+MyNotes.propTypes = {
+    courses: PropTypes.arrayOf(PropTypes.object)
 };

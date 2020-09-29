@@ -1,6 +1,6 @@
-import { put, select } from 'redux-saga/effects';
-import actions from '../actions/actionTypes';
 import * as api from '../../api/api';
+import actions from '../actions/actionTypes';
+import { put, select } from 'redux-saga/effects';
 
 export function* getAllPostsSaga(action) {
     yield put({ type: actions.GET_ALL_POSTS_REQUEST });

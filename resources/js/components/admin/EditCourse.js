@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {getCourseById, getUserById, updateCourse, updateUser} from "../../redux/actions/actionCreators";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
-import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
-import {FlatButton} from "../buttons/FlatButton";
-import ReactPlayer from "react-player";
 import {Title} from "../titles/Title";
+import ReactPlayer from "react-player";
+import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
+import {getCourseById, updateCourse} from "../../redux/actions/actionCreators";
 
 export function EditCourse({id, setModal}) {
     const {currentCourse, isLoading} = useSelector(store => store.coursesReducer);
@@ -168,3 +169,8 @@ export function EditCourse({id, setModal}) {
         </div>
     )
 }
+
+EditCourse.propTypes = {
+    id: PropTypes.number,
+    setModal: PropTypes.func
+};

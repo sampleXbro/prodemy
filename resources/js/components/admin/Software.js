@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
-import {addSoftware, updateSoftware} from "../../redux/actions/actionCreators";
 import {Title} from "../titles/Title";
 import {Input} from "../inputs/Input";
 import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
+import {addSoftware, updateSoftware} from "../../redux/actions/actionCreators";
 
 export function Software() {
     const[modal, setModal] = useState(false);

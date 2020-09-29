@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import PropTypes from "prop-types";
+import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
-import {FlatButton} from "../buttons/FlatButton";
 import {deleteComment, updateComment} from "../../redux/actions/actionCreators";
 
 export function EditComment({comment, setModal}) {
@@ -62,3 +63,8 @@ export function EditComment({comment, setModal}) {
         </div>
     )
 }
+
+EditComment.propTypes = {
+    comment: PropTypes.object,
+    setModal: PropTypes.func
+};

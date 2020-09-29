@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
 
 export function Badge({size, radius, color, text, textSize, textColor}) {
@@ -19,3 +20,12 @@ export function Badge({size, radius, color, text, textSize, textColor}) {
         </div>
     )
 }
+
+Badge.propTypes = {
+    size: PropTypes.string,
+    radius: PropTypes.string,
+    color: PropTypes.string,
+    text: PropTypes.any,
+    textSize: PropTypes.string,
+    textColor: PropTypes.string
+};

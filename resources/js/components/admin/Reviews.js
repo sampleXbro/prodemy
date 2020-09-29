@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import moment from 'moment'
+import PropTypes from "prop-types";
+import Image from "../images/Image";
+import {Link} from "react-router-dom";
+import {EditReview} from "./EditReview";
+import {Preloader} from "../preloaders/Preloader";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import Image from "../images/Image";
-import moment from 'moment'
-import {Link} from "react-router-dom";
-import {Preloader} from "../preloaders/Preloader";
-import {EditReview} from "./EditReview";
 
 export function Reviews({scrollMultiplier, search}) {
     const [selectedReview, setSelectedReview] = useState('');
@@ -66,3 +67,8 @@ export function Reviews({scrollMultiplier, search}) {
         </>
     )
 }
+
+Reviews.propTypes = {
+    scrollMultiplier: PropTypes.number,
+    search: PropTypes.string
+};

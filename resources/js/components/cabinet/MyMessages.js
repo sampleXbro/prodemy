@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import PropTypes from "prop-types";
+import Image from "../images/Image";
+import {Badge} from "../badges/Badge";
+import {Title} from "../titles/Title";
+import {Input} from "../inputs/Input";
+import {PrivateMessages} from "./PrivateMessages";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import Image from "../images/Image";
-import {Title} from "../titles/Title";
-import {PrivateMessages} from "./PrivateMessages";
-import {Input} from "../inputs/Input";
-import {Badge} from "../badges/Badge";
 
 export const MyMessages = ({currentUser, users}) => {
 
@@ -71,4 +72,9 @@ export const MyMessages = ({currentUser, users}) => {
             <PrivateMessages selectedUserId={selectedUser} users={users} currentUser={currentUser} messages={messages}/>
         </div>
     )
+};
+
+MyMessages.propTypes = {
+    currentUser: PropTypes.object,
+    users: PropTypes.arrayOf(PropTypes.object)
 };

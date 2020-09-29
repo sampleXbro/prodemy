@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import {string, oneOfType, number} from "prop-types";
 
 export default function Image({path, title, size = '300px', margin, borderRadius = '5px', className}){
 
@@ -30,3 +30,12 @@ export default function Image({path, title, size = '300px', margin, borderRadius
         style={styles}
     />
 }
+
+Image.propTypes = {
+    path: string,
+    title: string,
+    size: string,
+    margin: oneOfType([number, string]),
+    borderRadius: string,
+    className: string,
+};

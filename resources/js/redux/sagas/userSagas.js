@@ -15,7 +15,7 @@ export function* getUserById(action) {
             user: data,
         });
     } catch (e) {
-        yield put({type: actions.GET_USER_BY_ID_ERROR, message: 'Что-то пошло не так. Попробуйте ещё раз.'})
+        yield put({type: actions.GET_USER_BY_ID_ERROR, message: 'Не удалось получить пользователя. Попробуйте ещё раз.'})
     }
 }
 
@@ -38,7 +38,7 @@ export function* updateUser(action) {
             currentUser: current
         });
     } catch (e) {
-        yield put({type: actions.UPDATE_USER_ERROR, message: 'Что-то пошло не так. Попробуйте ещё раз.'})
+        yield put({type: actions.UPDATE_USER_ERROR, message: 'Не удалось обновить пользователя. Попробуйте ещё раз.'})
     }
 }
 
@@ -53,7 +53,7 @@ export function* getCurrentUserSaga(action) {
             currentUser: data,
         });
     } catch (e) {
-        yield put({type: actions.GET_CURRENT_USER_ERROR, message: 'Что-то пошло не так. Попробуйте ещё раз.'})
+        yield put({type: actions.GET_CURRENT_USER_ERROR, message: 'Не удалось получить текущего пользователя. Попробуйте ещё раз.'})
     }
 }
 
@@ -67,7 +67,7 @@ export function* getAllUsersSaga(action) {
             users: data,
         });
     } catch (e) {
-        yield put({type: actions.GET_ALL_USERS_ERROR, message: 'Что-то пошло не так. Попробуйте ещё раз.'})
+        yield put({type: actions.GET_ALL_USERS_ERROR, message: 'Не удалось получить пользователей. Попробуйте ещё раз.'})
     }
 }
 

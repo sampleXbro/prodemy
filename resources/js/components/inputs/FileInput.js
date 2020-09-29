@@ -1,4 +1,5 @@
 import React from 'react'
+import {func} from "prop-types";
 
 export function FileInput({onChange}) {
     return (
@@ -8,3 +9,7 @@ export function FileInput({onChange}) {
         </>
         )
 }
+
+FileInput.propTypes = {
+    onChange: func
+};

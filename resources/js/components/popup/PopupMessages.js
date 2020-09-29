@@ -1,6 +1,7 @@
 import React from 'react'
-import {Title} from "../titles/Title";
 import Image from "../images/Image";
+import {Title} from "../titles/Title";
+import {object} from "prop-types";
 
 export function PopupMessages({event}) {
 
@@ -25,3 +26,7 @@ export function PopupMessages({event}) {
         </div>
     )
 }
+
+PopupMessages.propTypes = {
+    event: object
+};

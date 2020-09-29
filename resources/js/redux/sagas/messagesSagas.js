@@ -1,6 +1,6 @@
-import { put, select } from 'redux-saga/effects';
-import actions from '../actions/actionTypes';
 import * as api from '../../api/api';
+import actions from '../actions/actionTypes';
+import { put, select } from 'redux-saga/effects';
 
 
 export function* getChatMessagesSaga(action) {
@@ -86,6 +86,6 @@ export function* updatePrivateMessageSaga(action) {
             messages: messages,
         });
     } catch (e) {
-        yield put({type: actions.UPDATE_PRIVATE_MESSAGE_ERROR, message: 'Ошибка при отправке сообщения. Попробуйте ещё раз.'})
+        yield put({type: actions.UPDATE_PRIVATE_MESSAGE_ERROR, message: 'Ошибка при обновлении сообщения. Попробуйте ещё раз.'})
     }
 }

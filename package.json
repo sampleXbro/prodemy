@@ -36,6 +36,7 @@
         "moment-timezone": "^0.5.31",
         "node": "^14.11.0",
         "node-sass": "^4.14.1",
+        "prop-types": "^15.7.2",
         "pusher-js": "^7.0.0",
         "react-paginate": "^6.3.2",
         "react-player": "^2.6.1",

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {deleteReview} from "../../redux/actions/actionCreators";
-import Image from "../images/Image";
 import moment from "moment";
+import PropTypes from "prop-types";
+import Image from "../images/Image";
 import {Link} from "react-router-dom";
 import {Title} from "../titles/Title";
-import {FlatButton} from "../buttons/FlatButton";
 import {useDispatch} from "react-redux";
+import {FlatButton} from "../buttons/FlatButton";
 import actionTypes from "../../redux/actions/actionTypes";
-
+import {deleteReview} from "../../redux/actions/actionCreators";
 
 export const MyReviews = ({reviews}) => {
     const [selectedReview, setSelectedReview] = useState('');
@@ -91,4 +91,8 @@ export const MyReviews = ({reviews}) => {
             </div>
         </>
     )
+};
+
+MyReviews.propTypes = {
+    reviews: PropTypes.arrayOf(PropTypes.object)
 };

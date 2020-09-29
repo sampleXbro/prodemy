@@ -1,8 +1,9 @@
 import React from 'react'
-import {Link} from "react-router-dom";
 import axios from "axios";
-import {Badge} from "../badges/Badge";
 import Image from "../images/Image";
+import {Link} from "react-router-dom";
+import {Badge} from "../badges/Badge";
+import {number, object} from "prop-types";
 
 export function NavPanel({currentUser, unreadQty}){
 
@@ -18,7 +19,7 @@ export function NavPanel({currentUser, unreadQty}){
             <div className="container position-relative">
                 <div className='position-absolute small-nav-panel-avatar-container'>
                     <Link to='/portal/cabinet/studied-courses'>
-                        <Image path={currentUser.avatar} size='25px' margin={0} borderRadius='5px' title='smallUserAvatar'/>
+                        <Image path={currentUser.avatar} size='25px' margin={'0'} borderRadius='5px' title='smallUserAvatar'/>
                     </Link>
                 </div>
                 <div className='position-absolute small-nav-panel-badge'>
@@ -93,3 +94,8 @@ export function NavPanel({currentUser, unreadQty}){
 
     )
 }
+
+NavPanel.propTypes = {
+    currentUser: object,
+    unreadQty: number
+};

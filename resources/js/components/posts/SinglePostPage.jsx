@@ -1,8 +1,14 @@
 import React, {useEffect, useMemo} from 'react'
-import {useParams} from "react-router";
-import {useSelector, useDispatch} from "react-redux";
-import ReactPlayer from 'react-player'
+import {object} from "prop-types";
+import Image from "../images/Image";
 import {Title} from "../titles/Title";
+import {useParams} from "react-router";
+import ReactPlayer from 'react-player';
+import {WriteComment} from "./WriteComment";
+import {Preloader} from "../preloaders/Preloader";
+import {momentTime} from "../../utils/momentTime";
+import {ProgressBar} from "../progress/ProgressBar";
+import {useSelector, useDispatch} from "react-redux";
 import {
     deleteComment,
     dislikePost,
@@ -10,11 +16,6 @@ import {
     getPostById,
     likePost, updateComment
 } from "../../redux/actions/actionCreators";
-import {Preloader} from "../preloaders/Preloader";
-import {ProgressBar} from "../progress/ProgressBar";
-import Image from "../images/Image";
-import {momentTime} from "../../utils/momentTime";
-import {WriteComment} from "./WriteComment";
 
 export function SinglePostPage({user}){
     const {id} = useParams();
@@ -158,3 +159,7 @@ export function SinglePostPage({user}){
         </div>
     )
 }
+
+SinglePostPage.propTypes = {
+    user: object
+};

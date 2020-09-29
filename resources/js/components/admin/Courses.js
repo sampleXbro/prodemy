@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import actionTypes from "../../redux/actions/actionTypes";
-import Image from "../images/Image";
 import moment from 'moment'
-import {truncateText} from "../../utils/truncateText";
-import {Preloader} from "../preloaders/Preloader";
-import {EditCourse} from "./EditCourse";
-import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import Image from "../images/Image";
 import {AddCourse} from "./AddCourse";
+import {Link} from "react-router-dom";
+import {EditCourse} from "./EditCourse";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import {truncateText} from "../../utils/truncateText";
+import actionTypes from "../../redux/actions/actionTypes";
 
 export function Courses({scrollMultiplier, search, currentUser}) {
     const {courses, isLoading} = useSelector(store => store.coursesReducer);
@@ -87,3 +88,9 @@ export function Courses({scrollMultiplier, search, currentUser}) {
         </>
     )
 }
+
+Courses.propTypes = {
+    scrollMultiplier: PropTypes.number,
+    search: PropTypes.string,
+    currentUser: PropTypes.object
+};

@@ -1,14 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
-import {
-    addUserLevel,
-    updateUserLevel
-} from "../../redux/actions/actionCreators";
 import {Title} from "../titles/Title";
 import {Input} from "../inputs/Input";
 import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
+import {addUserLevel, updateUserLevel} from "../../redux/actions/actionCreators";
 
 export function UsersLevels() {
     const[modal, setModal] = useState(false);

@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import actionTypes from "../../redux/actions/actionTypes";
+import moment from 'moment';
+import {AddPost} from "./AddPost";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
-import moment from 'moment'
-import {truncateText} from "../../utils/truncateText";
-import {Preloader} from "../preloaders/Preloader";
 import {EditPost} from "./EditPost";
 import {Link} from "react-router-dom";
-import {AddPost} from "./AddPost";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import {truncateText} from "../../utils/truncateText";
+import actionTypes from "../../redux/actions/actionTypes";
 
 export function Posts({scrollMultiplier, search, currentUser}) {
     const {posts, isLoading} = useSelector(store => store.postsReducer);
@@ -77,3 +78,9 @@ export function Posts({scrollMultiplier, search, currentUser}) {
         </>
     )
 }
+
+Posts.propTypes = {
+    scrollMultiplier: PropTypes.number,
+    search: PropTypes.string,
+    currentUser: PropTypes.object
+};

@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {
-    getPostById, updateCourse,
-    updatePost,
-} from "../../redux/actions/actionCreators";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
-import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
-import {FlatButton} from "../buttons/FlatButton";
-import ReactPlayer from "react-player";
 import {Title} from "../titles/Title";
+import ReactPlayer from "react-player";
+import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
+import {getPostById, updatePost} from "../../redux/actions/actionCreators";
+
 
 export function EditPost({id, setModal}) {
     const {currentPost, isLoading} = useSelector(store => store.postsReducer);
@@ -136,3 +135,8 @@ export function EditPost({id, setModal}) {
         </div>
     )
 }
+
+EditPost.propTypes = {
+    id: PropTypes.number,
+    setModal: PropTypes.func
+};

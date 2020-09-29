@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
 import {sendNoteViaMail} from "../../api/api";
 import {FlatButton} from "../buttons/FlatButton";
-
 
 export function Notes({id, course, isVisibleButton}) {
     const [notes, setNotes] = useState(localStorage.getItem(`@course|${id}`) || '');
@@ -41,3 +41,9 @@ export function Notes({id, course, isVisibleButton}) {
         </div>
     )
 }
+
+Notes.propTypes = {
+    id: PropTypes.string,
+    course: PropTypes.object,
+    isVisibleButton:PropTypes.bool
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import {string, func} from "prop-types";
 
 export const Input = ({value, onChange, placeholder = 'Кто ищет - тот найдет!', width, textAlign, margin}) => {
 
@@ -19,4 +20,13 @@ export const Input = ({value, onChange, placeholder = 'Кто ищет - тот 
             placeholder={placeholder}
         />
     )
+};
+
+Input.propTypes = {
+    value: string,
+    onChange: func,
+    placeholder: string,
+    width: string,
+    textAlign: string,
+    margin: string
 };

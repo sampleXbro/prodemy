@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {getUserById, updateUser} from "../../redux/actions/actionCreators";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
-import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
 import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import actionTypes from "../../redux/actions/actionTypes";
+import {getUserById, updateUser} from "../../redux/actions/actionCreators";
 
 export function EditUser({id, setModal}) {
     const {user, isLoading} = useSelector(store => store.userReducer);
@@ -76,3 +77,8 @@ export function EditUser({id, setModal}) {
         </div>
     )
 }
+
+EditUser.propTypes = {
+    id: PropTypes.number,
+    setModal: PropTypes.func
+};

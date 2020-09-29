@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
 import StarRatings from "react-star-ratings";
 import {momentTime} from "../../utils/momentTime";
@@ -35,3 +36,7 @@ export function Reviews({reviews}){
         </div>
     )
 }
+
+Reviews.propTypes = {
+    reviews: PropTypes.array,
+};

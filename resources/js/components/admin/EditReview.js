@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import PropTypes from "prop-types";
+import StarRatings from "react-star-ratings";
+import {FlatButton} from "../buttons/FlatButton";
+import {Preloader} from "../preloaders/Preloader";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import {Preloader} from "../preloaders/Preloader";
-import {FlatButton} from "../buttons/FlatButton";
-import StarRatings from "react-star-ratings";
 import {deleteReview, updateReview} from "../../redux/actions/actionCreators";
 
 export function EditReview({review, setModal}) {
@@ -75,3 +76,8 @@ export function EditReview({review, setModal}) {
         </div>
     )
 }
+
+EditReview.propTypes = {
+    review: PropTypes.object,
+    setModal: PropTypes.func
+};

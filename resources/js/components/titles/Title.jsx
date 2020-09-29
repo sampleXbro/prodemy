@@ -1,4 +1,5 @@
 import React from 'react';
+import {string, oneOfType, number, any} from "prop-types";
 
 export function Title({text, size, weight, margin, fontStyle, textAlign, cursor, color, id}) {
     const styles = {
@@ -16,3 +17,15 @@ export function Title({text, size, weight, margin, fontStyle, textAlign, cursor,
         <p style={styles} id={id}>{text}</p>
     )
 }
+
+Title.propTypes = {
+    text: any,
+    size: oneOfType([string, number]),
+    weight: oneOfType([string, number]),
+    margin: oneOfType([string, number]),
+    fontStyle: string,
+    textAlign: string,
+    cursor: string,
+    color: string,
+    id: oneOfType([string, number])
+};

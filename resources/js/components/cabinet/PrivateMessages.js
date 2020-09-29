@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import {Title} from "../titles/Title";
+import PropTypes from "prop-types";
 import Image from "../images/Image";
-import {FlatButton} from "../buttons/FlatButton";
+import {Title} from "../titles/Title";
 import {useDispatch} from "react-redux";
-import {sendPrivateMessage} from "../../redux/actions/actionCreators";
+import {FlatButton} from "../buttons/FlatButton";
 import {momentTime} from "../../utils/momentTime";
 import {updatePrivateMessage} from "../../api/api";
+import {sendPrivateMessage} from "../../redux/actions/actionCreators";
 
 
 export function PrivateMessages({users, selectedUserId, currentUser, messages}) {
@@ -107,3 +108,10 @@ export function PrivateMessages({users, selectedUserId, currentUser, messages}) 
         </div>
     )
 }
+
+PrivateMessages.propTypes = {
+    users: PropTypes.arrayOf(PropTypes.object),
+    selectedUserId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    currentUser: PropTypes.object,
+    messages: PropTypes.array
+};

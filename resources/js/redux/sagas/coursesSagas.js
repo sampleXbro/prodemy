@@ -1,6 +1,6 @@
-import {put, select} from 'redux-saga/effects';
-import actions from '../actions/actionTypes';
 import * as api from '../../api/api';
+import actions from '../actions/actionTypes';
+import {put, select} from 'redux-saga/effects';
 
 
 export function* getAllCoursesSaga(action) {
@@ -45,7 +45,7 @@ export function* addCourse(action) {
             courses: courses,
         });
     } catch (e) {
-        yield put({type: actions.ADD_COURSE_ERROR, message: 'Ошибка при получении курса. Попробуйте ещё раз.'})
+        yield put({type: actions.ADD_COURSE_ERROR, message: 'Ошибка при добавлении курса. Попробуйте ещё раз.'})
     }
 }
 
@@ -66,7 +66,7 @@ export function* updateCourse(action) {
             courses: courses,
         });
     } catch (e) {
-        yield put({type: actions.UPDATE_COURSE_ERROR, message: 'Ошибка при получении курса. Попробуйте ещё раз.'})
+        yield put({type: actions.UPDATE_COURSE_ERROR, message: 'Ошибка при обновлении курса. Попробуйте ещё раз.'})
     }
 }
 

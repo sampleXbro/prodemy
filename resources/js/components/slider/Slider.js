@@ -1,6 +1,7 @@
 import React from 'react';
 import SliderSlick from 'react-slick';
 import {history} from "../../utils/history";
+import {string, oneOfType, number, array} from "prop-types";
 
 export const Slider = ({items, itemType ='course', softwareId}) => {
 
@@ -86,4 +87,10 @@ export const Slider = ({items, itemType ='course', softwareId}) => {
             </SliderSlick>
         </div>
     )
+};
+
+Slider.propTypes = {
+    items: array,
+    itemType: string,
+    softwareId: oneOfType([string, number])
 };

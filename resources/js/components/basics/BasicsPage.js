@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import {Title} from "../titles/Title";
 import {Slider} from "../slider/Slider";
 import {Filter} from "../courses/Filter";
+import {Preloader} from "../preloaders/Preloader";
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../../redux/actions/actionTypes";
-import {ItemsList} from "../itemsList/ItemsList";
-import {Preloader} from "../preloaders/Preloader";
-import {Title} from "../titles/Title";
+import {ItemsListWithInfiniteScroll} from "../itemsList/ItemsListWithInfiniteScroll";
 
 export const BasicsPage = () => {
     const {posts, isLoading} = useSelector(store => store.postsReducer);
@@ -25,7 +25,7 @@ export const BasicsPage = () => {
             <Title text='БАЗОВЫЕ СВЕДЕНИЯ' textAlign='center' size='22px' margin='0 0 10px 0'/>
             <Slider items={filteredPosts} itemType='post' softwareId={softwareId}/>
             <Filter setSoftwareId={setSoftwareId}/>
-            <ItemsList items={filteredPosts} softwareId={softwareId} itemType='post'/>
+            <ItemsListWithInfiniteScroll items={filteredPosts} softwareId={softwareId} itemType='post'/>
         </div>
     )
 };

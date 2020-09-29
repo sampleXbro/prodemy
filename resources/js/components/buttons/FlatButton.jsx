@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {Title} from "../titles/Title";
 
-export function FlatButton({name, isActive, onClick, width, height, disabled, colorActive='#F38300', colorInactive='white', className, margin}) {
+export function FlatButton(props) {
+    const {name, isActive, onClick, width, height, disabled, colorActive='#F38300', colorInactive='white', className, margin} = props;
 
     const styles = {
         backgroundColor: isActive ? colorActive : colorInactive,
@@ -19,3 +21,16 @@ export function FlatButton({name, isActive, onClick, width, height, disabled, co
         </div>
     )
 }
+
+FlatButton.propTypes = {
+    name: PropTypes.string,
+    isActive: PropTypes.bool,
+    onClick: PropTypes.func,
+    width: PropTypes.string,
+    height: PropTypes.string,
+    disabled: PropTypes.bool,
+    colorActive: PropTypes.string,
+    colorInactive: PropTypes.string,
+    className: PropTypes.string,
+    margin: PropTypes.string,
+};
