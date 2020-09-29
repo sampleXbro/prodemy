@@ -1,6 +1,5 @@
-Project: prodemy. <br>
-Main page was wrote in Laravel for SEO optimisation. <br>
-Project looks great both on desktops and on mobiles. <br>
+Project: prodemy <br>
+I wrote this SPA myself from design to deploy<br>
 Uses: <br>
 <ul>
 <li>Laravel as a backend framework</li>
@@ -13,7 +12,8 @@ Uses: <br>
 <li>Moment to don`t worry about time :)</li>
 <li>Pusher as a great service for messaging</li>
 </ul>
-Also I`ve used SASS for convenience) <br>
-I wrote this SPA myself from design to deploy.
-
-Prodemy is my first full-scale project.
+Main page was wrote in Laravel for SEO optimisation <br>
+Project looks great both on desktops and on mobiles <br>
+Also I've used SASS for convenience) <br>
+<br>
+Prodemy is my first full-scale project
