@@ -75,7 +75,7 @@
 
         </div>
 
-        <div class="container-fluid features-container">
+        <div style="max-width: 1400px" class="container-fluid features-container">
 
             <div class="small-feature-card" style="background-image: url({{ asset('images/digital-mixer-recording-studio-with-computer-recording-music_169016-3817.jpg')}})">
                 <p class="text-middle-normal-light" >БОЛЕЕ {{floor($courses->sum('full_duration') / 3600)}} ЧАСОВ ОБУЧАЮЩИХ МАТЕРИАЛОВ</p>
@@ -93,7 +93,7 @@
         <p class="container-fluid text-center text-middle-normal-dark pt-1" style="font-weight: 400; background: none">НОВЫЕ ОБУЧАЮЩИЕ МАТЕРИАЛЫ</p>
 
         <hr>
-        <div class="container-fluid courses-container">
+        <div style="max-width: 1500px" class="container-fluid courses-container">
             @foreach($courses as $course)
                 <div class="small-course-card" style="background-image: url({{$course->image}})">
                     <p class="text-middle-normal-dark">{{strtoupper($course->title)}}</p>
@@ -134,7 +134,7 @@
         @endphp
         <div class="courses-container">
             @foreach($curReviews as $curReview)
-                <div class="container-fluid border rounded m-2 bg-light">
+                <div style="max-width: 1300px" class="container-fluid border rounded m-2 bg-light">
                     <p class="pt-1 font-weight-bold" style="background: none">{{$curReview->author->name}}</p>
                     <p class="text-small-normal-dark pt-1" style="font-weight: 300; background: none">{{$curReview->review}}</p>
 
