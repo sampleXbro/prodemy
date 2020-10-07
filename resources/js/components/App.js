@@ -2,19 +2,19 @@ import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import {Chat} from "./chat/Chat";
 import {history} from "../utils/history";
-import {AdminPanel} from "./admin/AdminPanel";
+import {AdminPanel} from "../pages/admin/AdminPanel";
 import {NavPanel} from "./navigation/NavPanel";
-import {BasicsPage} from "./basics/BasicsPage";
+import {BasicsPage} from "../pages/basics/BasicsPage";
 import {ErrorWindow} from "./errors/ErrorWindow";
 import {Preloader} from "./preloaders/Preloader";
-import {CoursesPage} from "./courses/CoursesPage";
-import {CabinetPage} from "./cabinet/CabinetPage";
+import {CoursesPage} from "../pages/courses/CoursesPage";
+import {CabinetPage} from "../pages/cabinet/CabinetPage";
 import actions from "../redux/actions/actionTypes";
 import configureStore from '../redux/sagas/config';
-import {AdvancedPage} from "./advanced/AdvancedPage";
+import {AdvancedPage} from "../pages/advanced/AdvancedPage";
 import {SinglePostPage} from "./posts/SinglePostPage";
 import {Router, Switch, Route} from "react-router-dom";
-import {SingleCoursePage} from "./courses/SingleCoursePage";
+import {SingleCoursePage} from "../pages/singleCoursePage/SingleCoursePage";
 import {Provider, useDispatch, useSelector} from 'react-redux';
 
 export default function App() {
