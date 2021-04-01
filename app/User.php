@@ -35,29 +35,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(\App\PrivateMessage::class );
     }
 
-    /**
-     *
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'email', 'password', 'avatar', 'role_id', 'users_level_id', 'additional',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
