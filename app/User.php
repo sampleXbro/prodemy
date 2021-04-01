@@ -36,7 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * The attributes that are mass assignable.
+     *
      *
      * @var array
      */
