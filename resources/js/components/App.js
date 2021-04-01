@@ -29,7 +29,7 @@ export default function App() {
         dispatch({type: actions.GET_PRIVATE_MESSAGES});
     },[]);
 
-    if (!Object.keys(user).length || !privateMessages || !privateMessages.length) return <Preloader/>;
+    if (!Object.keys(user).length) return <Preloader/>;
 
     const myUnreadMessagesQty = privateMessages.filter(mes => mes.recipient_id === user.id && mes.status === 'delivered').length;
 

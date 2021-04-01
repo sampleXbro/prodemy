@@ -4,10 +4,12 @@ import {put, select} from 'redux-saga/effects';
 
 
 export function* getAllCoursesSaga(action) {
+
     yield put({ type: actions.GET_ALL_COURSES_REQUEST });
 
     try {
         const { data } = yield api.getCoursesWithReviews();
+
         yield put({
             type: actions.GET_ALL_COURSES_RESPONSE,
             courses: data,

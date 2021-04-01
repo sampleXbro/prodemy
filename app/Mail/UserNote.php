@@ -11,11 +11,6 @@ class UserNote extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
 
     protected $courseTitle;
     protected $note;
@@ -26,11 +21,6 @@ class UserNote extends Mailable
         $this->note = $note;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
 

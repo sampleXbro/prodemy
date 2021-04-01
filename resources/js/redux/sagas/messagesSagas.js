@@ -15,7 +15,7 @@ export function* getChatMessagesSaga(action) {
             messages: data,
         });
     } catch (e) {
-        yield put({type: actions.GET_CHAT_MESSAGES_ERROR, message: 'Ошибка при получении сообщений . Попробуйте ещё раз.'})
+        yield put({type: actions.GET_CHAT_MESSAGES_ERROR, message: 'Ошибка при получении всех сообщений. Попробуйте ещё раз.'})
     }
 }
 
@@ -48,7 +48,7 @@ export function* getPrivateMessagesSaga(action) {
             messages: data,
         });
     } catch (e) {
-        yield put({type: actions.GET_PRIVATE_MESSAGES_ERROR, message: 'Ошибка при получении сообщений. Попробуйте ещё раз.'})
+        yield put({type: actions.GET_PRIVATE_MESSAGES_ERROR, message: 'Ошибка при получении личных сообщений. Попробуйте ещё раз.'})
     }
 }
 
@@ -65,7 +65,7 @@ export function* sendPrivateMessageSaga(action) {
             messages: messages,
         });
     } catch (e) {
-        yield put({type: actions.SEND_PRIVATE_MESSAGE_ERROR, message: 'Ошибка при отправке сообщения. Попробуйте ещё раз.'})
+        yield put({type: actions.SEND_PRIVATE_MESSAGE_ERROR, message: 'Ошибка при отправке личного сообщения. Попробуйте ещё раз.'})
     }
 }
 
@@ -86,6 +86,6 @@ export function* updatePrivateMessageSaga(action) {
             messages: messages,
         });
     } catch (e) {
-        yield put({type: actions.UPDATE_PRIVATE_MESSAGE_ERROR, message: 'Ошибка при обновлении сообщения. Попробуйте ещё раз.'})
+        yield put({type: actions.UPDATE_PRIVATE_MESSAGE_ERROR, message: 'Ошибка при обновлении личного сообщения. Попробуйте ещё раз.'})
     }
 }
