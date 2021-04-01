@@ -16,7 +16,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'image' => $image,
         'author_id' => $faker->randomElement(\App\User::all('id')),
         'software_id' => $faker->randomElement(\App\Software::all('id')),
-        'is_recommended' => $faker->boolean,
         'type_id' => $faker->randomElement(\App\PostType::all('id')),
         'like_dislike' => $faker->numberBetween(500, 1000) . '|' . $faker->numberBetween(1, 200)
     ];

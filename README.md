@@ -18,4 +18,3 @@ Main page was wrote in Laravel for SEO optimisation <br>
 Project looks great both on desktops and on mobiles <br>
 Also I've used SASS for convenience) <br>
 <br>
-Prodemy is my first full-scale project

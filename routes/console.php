@@ -9,10 +9,8 @@ Artisan::command('inspire', function () {
 
 Artisan::command('logs:clear', function() {
 
-    // Option 1. Empty the laravel.log file, OR
     exec('echo "" > ' . storage_path('logs/laravel.log'));
 
-    // Option 2. Empty the logs folder
     exec('rm ' . storage_path('logs/*'));
 
     $this->comment('Logs have been cleared!');

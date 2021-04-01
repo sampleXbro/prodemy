@@ -12,7 +12,7 @@ if (App::environment('production')) {
 Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/admin/{slug}', 'ReactController@index')->name('admin')->middleware('role:Администратор');
+Route::get('/admin/{slug}', 'ReactController@index')->name('admin')->middleware('role:admin');
 
 Route::get('/portal/{path?}', [
     'uses' => 'ReactController@index',

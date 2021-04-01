@@ -2,8 +2,8 @@ import React from 'react'
 import axios from "axios";
 import Image from "../images/Image";
 import {Link} from "react-router-dom";
-import {Badge} from "../badges/Badge";
 import {number, object} from "prop-types";
+import {Badge} from "../styled/Badge";
 
 export function NavPanel({currentUser, unreadQty}){
 
@@ -24,13 +24,13 @@ export function NavPanel({currentUser, unreadQty}){
                 </div>
                 <div className='position-absolute small-nav-panel-badge'>
                     <Link to='/portal/cabinet/my-messages'>
-                        <Badge color='#38c172'
-                               text={unreadQty > 10 ? '10+' : unreadQty}
-                               size='22px'
-                               textSize='12px'
-                               textColor='white'
-                               radius='0 100% 100% 100%'
-                        />
+                        <Badge
+                            size={'24px'}
+                            color={'#38c172'}
+                            textColor={'white'}
+                            radius={'0 50% 50% 50%'}
+                            fontSize={'12px'}
+                        >{unreadQty > 10 ? '10+' : unreadQty}</Badge>
                     </Link>
                 </div>
                 <a id="main-logo" className="text" href="/">

@@ -21,7 +21,7 @@ export const Slider = ({items, itemType ='course', softwareId}) => {
                     <img
                         className='slide'
                         src={item.image}
-                        onError={(e)=>{e.target.onerror = null; e.target.src='/images/no-image.png'}}
+                        onError={(e)=>{e.target.onerror = null; e.target.src='/images/noImage.png'}}
                         onClick={() => handleImageClick(item.id)}
                         alt={item.title}
                         key={item.id}
@@ -32,7 +32,7 @@ export const Slider = ({items, itemType ='course', softwareId}) => {
                     <img
                         className='slide'
                         src={item.image}
-                        onError={(e)=>{e.target.onerror = null; e.target.src='/images/no-image.png'}}
+                        onError={(e)=>{e.target.onerror = null; e.target.src='/images/noImage.png'}}
                         onClick={() => handleImageClick(item.id)}
                         alt={item.title}
                         key={item.id}

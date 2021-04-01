@@ -19,7 +19,7 @@ $factory->define(Course::class, function (Faker $faker) {
         'what_will_learn' => $faker->text(500),
         'requirements' => $faker->text(150),
         'is_recommended' => $faker->boolean(),
-        'level_id' => $faker->numberBetween(1, 3),
+        'level_id' => $faker->numberBetween(1, 2),
         'software_id' => $faker->numberBetween(1, 5),
         'views' => $faker->numberBetween(123, 12000),
         'bonus' => $faker->boolean(),

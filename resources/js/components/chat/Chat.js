@@ -8,6 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {PopupMessages} from "../popup/PopupMessages";
 import actionTypes from "../../redux/actions/actionTypes";
 import {sendChatMessage} from "../../redux/actions/actionCreators";
+import {Badge} from "../styled/Badge";
+import {colors} from "../../colors/colors";
 
 export const Chat = ({user, privateMessages}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +18,7 @@ export const Chat = ({user, privateMessages}) => {
     const [popup, setPopup] = useState('');
     const {messages} = useSelector(store => store.chatReducer);
     const dispatch = useDispatch();
+
 
     useEffect(() => {
         dispatch({type: actionTypes.GET_CHAT_MESSAGES});
@@ -121,7 +124,6 @@ export const Chat = ({user, privateMessages}) => {
     function scrollHandler(e){
         let element = e.target;
         if (element.scrollTop === 0) {
-
             setQtyList(qtyList + 10);
         }
     }
@@ -144,12 +146,16 @@ export const Chat = ({user, privateMessages}) => {
             return (
                 <div onClick={handleChatClick}>
                     {+unread ?
-                    <div className='unread-chat-messages-badge'>
-                        <Title text={unread} size='12px' textAlign='center' weight={300} margin={0}/>
-                    </div>
-                        :
-                        ''
-                    }
+                        <Badge
+                            position={'absolute'}
+                            top={'-5px'}
+                            right={'-5px'}
+                            size={'18px'}
+                            textColor={colors.mainWhite}
+                            radius={'100%'}
+                            color={colors.green}
+                            fontSize={'12px'}>{unread}
+                        </Badge> : ''}
                     <Title text='ЧАТ' size='24px' textAlign='center' weight={400} margin={0} cursor={'pointer'}/>
                 </div>
             )

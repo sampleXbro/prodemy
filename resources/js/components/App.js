@@ -16,6 +16,7 @@ import {SinglePostPage} from "./posts/SinglePostPage";
 import {Router, Switch, Route} from "react-router-dom";
 import {SingleCoursePage} from "../pages/singleCoursePage/SingleCoursePage";
 import {Provider, useDispatch, useSelector} from 'react-redux';
+import {Feed} from "../pages/feed/feed";
 
 export default function App() {
     const {courses} = useSelector(store => store.coursesReducer);
@@ -45,6 +46,9 @@ export default function App() {
             <Switch>
                 <Route exact path={'/admin/:slug'}
                        render={() => <AdminPanel myUnreadMessagesQty={myUnreadMessagesQty}/>}/>
+
+                <Route exact path={'/portal/feed'}
+                       render={() => <Feed/>}/>
 
                 <Route exact path={'/portal/basics'}
                        render={() => <BasicsPage/>}/>

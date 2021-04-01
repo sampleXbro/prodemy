@@ -9,7 +9,7 @@ export default function Image({path, title, size = '300px', margin, borderRadius
         if (path){
             setImage(path)
         } else {
-            setImage('/images/no-image.png')
+            setImage('/images/noImage.png')
         }
 
     }, [path]);
@@ -25,7 +25,7 @@ export default function Image({path, title, size = '300px', margin, borderRadius
     return <img
         className={className}
         src={image}
-        onError={()=>{setImage('/images/no-image.png')}}
+        onError={()=>{setImage('/images/noImage.png')}}
         alt={title}
         style={styles}
     />
