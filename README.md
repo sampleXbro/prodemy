@@ -1,5 +1,6 @@
 Project: prodemy <br>
-
+Deployed to Heroku: <a>http://prodemy.herokuapp.com</a><br>
+To try you can login with: email: newtestadmin@test.com, password: 1234567890 <br>
 I wrote this SPA myself from design to deploy<br>
 Uses: <br>
 <ul>
